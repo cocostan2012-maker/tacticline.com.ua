@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TacticLine — каталог товарів</title>
-  <meta name="description" content="Каталог товарів TacticLine з OLX: аксесуари, кріплення, спорядження та корисні дрібниці. Замовлення через Telegram або OLX." />
+  <title>TacticLine — незалежний каталог товарів</title>
+  <meta name="description" content="TacticLine — незалежний каталог товарів з повними описами, категоріями, пошуком і замовленням через Telegram." />
   <meta name="theme-color" content="#0f172a" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,20 +15,19 @@
         <span class="brand-mark">TL</span>
         <span>
           <strong>TacticLine</strong>
-          <small>каталог товарів</small>
+          <small>незалежний каталог</small>
         </span>
       </a>
       <div class="nav-actions">
-        <a class="ghost-link" href="https://www.olx.ua/uk/list/user/Q6uhw/" target="_blank" rel="noopener">OLX</a>
         <a class="primary-link" href="https://t.me/NordicKostya" target="_blank" rel="noopener">Telegram</a>
       </div>
     </nav>
 
     <section class="hero wrap" id="top">
       <div class="hero-content">
-        <p class="eyebrow">OLX + Telegram каталог</p>
-        <h1>Товари в одному зручному магазині-каталозі</h1>
-        <p class="hero-text">Пошук, категорії, кошик-заявка і швидке замовлення через Telegram або перехід на OLX. Фото можна додати пізніше — сайт уже готовий працювати без них.</p>
+        <p class="eyebrow">Власний резервний каталог</p>
+        <h1>Товари на окремому сайті без прив’язки до OLX</h1>
+        <p class="hero-text">Каталог працює як запасний варіант: пошук, категорії, повні описи, кошик-заявка і швидке замовлення через Telegram. Наявність та актуальну ціну уточнюйте перед покупкою.</p>
         <div class="hero-buttons">
           <a class="button button-primary" href="#catalog">Дивитись товари</a>
           <a class="button button-secondary" href="https://t.me/NordicKostya" target="_blank" rel="noopener">Написати продавцю</a>
@@ -38,8 +37,8 @@
         <span class="pill">Безкоштовний статичний сайт</span>
         <h2>Як замовити?</h2>
         <ol>
-          <li>Обери товари</li>
-          <li>Натисни “В кошик”</li>
+          <li>Обери товар у каталозі</li>
+          <li>Натисни “Детальніше” або “В кошик”</li>
           <li>Відправ заявку в Telegram</li>
         </ol>
         <p>Оплата, доставка і наявність уточнюються напряму з продавцем.</p>
@@ -49,7 +48,7 @@
 
   <main>
     <section class="notice wrap">
-      <strong>Важливо:</strong> каталог не продає зброю або боєприпаси. Перед замовленням покупець самостійно перевіряє законність використання товару у своїй країні/регіоні.
+      <strong>Важливо:</strong> каталог є інформаційною вітриною. Наявність, актуальну ціну, сумісність і умови доставки уточнюйте перед замовленням у Telegram.
     </section>
 
     <section class="toolbar wrap" aria-label="Фільтри каталогу">
@@ -110,13 +109,17 @@
     </div>
   </aside>
 
+  <dialog class="product-modal" id="productModal" aria-label="Детальний опис товару">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Закрити">×</button>
+    <div id="modalBody" class="modal-body"></div>
+  </dialog>
+
   <footer class="footer wrap">
     <div>
       <strong>TacticLine</strong>
       <p>Для замовлення або деталей пишіть 👉 <a href="https://t.me/NordicKostya" target="_blank" rel="noopener">@NordicKostya</a></p>
     </div>
     <div class="footer-links">
-      <a href="https://www.olx.ua/uk/list/user/Q6uhw/" target="_blank" rel="noopener">OLX продавця</a>
       <a href="https://t.me/NordicKostya" target="_blank" rel="noopener">Telegram</a>
     </div>
   </footer>

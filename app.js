@@ -14,6 +14,9 @@ const cartItems = document.querySelector("#cartItems");
 const cartTotal = document.querySelector("#cartTotal");
 const clearCart = document.querySelector("#clearCart");
 const telegramOrder = document.querySelector("#telegramOrder");
+const modal = document.querySelector("#productModal");
+const modalBody = document.querySelector("#modalBody");
+const modalClose = document.querySelector("#modalClose");
 
 let cart = JSON.parse(localStorage.getItem("tacticline-cart") || "[]");
 
@@ -46,7 +49,15 @@ function getFilteredProducts() {
   const sort = sortSelect.value;
 
   let items = PRODUCTS.filter(product => {
-    const text = [product.title, product.category, product.description, ...(product.tags || [])].join(" ").toLowerCase();
+    const text = [
+      product.title,
+      product.category,
+      product.description,
+      product.fullDescription,
+      ...(product.tags || []),
+      ...(product.specs || []),
+      ...(product.package || [])
+    ].join(" ").toLowerCase();
     const matchesSearch = !query || text.includes(query);
     const matchesCategory = category === "all" || product.category === category;
     return matchesSearch && matchesCategory;
@@ -85,10 +96,53 @@ function renderProducts() {
       </div>
       <div class="card-actions">
         <button class="button button-primary" type="button" data-add="${escapeHtml(product.id)}">В кошик</button>
-        <a class="button button-secondary" href="${escapeHtml(product.olxUrl)}" target="_blank" rel="noopener">OLX</a>
+        <button class="button button-secondary" type="button" data-detail="${escapeHtml(product.id)}">Детальніше</button>
       </div>
     </article>
   `).join("");
+}
+
+function openDetails(id) {
+  const product = PRODUCTS.find(item => item.id === id);
+  if (!product || !modal || !modalBody) return;
+
+  modalBody.innerHTML = `
+    <div class="modal-visual" aria-hidden="true">${escapeHtml(product.icon || "•")}</div>
+    <p class="eyebrow">${escapeHtml(product.category)}</p>
+    <h2>${escapeHtml(product.title)}</h2>
+    <p class="modal-description">${escapeHtml(product.fullDescription || product.description)}</p>
+    <div class="modal-price-row">
+      <strong>${formatPrice(product.price)}</strong>
+      <span>${escapeHtml(product.stock || "уточнюйте")}</span>
+    </div>
+    ${(product.tags || []).length ? `
+      <div class="meta-list modal-tags">
+        ${product.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    ` : ""}
+    ${(product.specs || []).length ? `
+      <h3>Параметри</h3>
+      <ul class="detail-list">
+        ${product.specs.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+      </ul>
+    ` : ""}
+    ${(product.package || []).length ? `
+      <h3>Комплектація</h3>
+      <ul class="detail-list">
+        ${product.package.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+      </ul>
+    ` : ""}
+    <div class="modal-actions">
+      <button class="button button-primary" type="button" data-add="${escapeHtml(product.id)}">Додати в кошик</button>
+      <a class="button button-secondary" href="https://t.me/${TELEGRAM_USERNAME}" target="_blank" rel="noopener">Запитати в Telegram</a>
+    </div>
+  `;
+
+  modal.showModal();
+}
+
+function closeDetails() {
+  if (modal?.open) modal.close();
 }
 
 function saveCart() {
@@ -153,7 +207,7 @@ function updateTelegramLink() {
     "Добрий день! Хочу замовити:",
     ...lines,
     "",
-    "Підкажіть, будь ласка, наявність і умови доставки."
+    "Підкажіть, будь ласка, наявність, актуальну ціну та умови доставки."
   ].join("\n");
   telegramOrder.href = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
 }
@@ -180,13 +234,20 @@ clearCart.addEventListener("click", () => {
 });
 
 grid.addEventListener("click", event => {
-  const button = event.target.closest("[data-add]");
-  if (button) addToCart(button.dataset.add);
+  const addButton = event.target.closest("[data-add]");
+  const detailButton = event.target.closest("[data-detail]");
+  if (addButton) addToCart(addButton.dataset.add);
+  if (detailButton) openDetails(detailButton.dataset.detail);
 });
 
-cartItems.addEventListener("click", event => {
-  const button = event.target.closest("[data-remove]");
-  if (button) removeFromCart(button.dataset.remove);
+modalBody?.addEventListener("click", event => {
+  const addButton = event.target.closest("[data-add]");
+  if (addButton) addToCart(addButton.dataset.add);
+});
+
+modalClose?.addEventListener("click", closeDetails);
+modal?.addEventListener("click", event => {
+  if (event.target === modal) closeDetails();
 });
 
 initCategories();
