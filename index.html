@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TacticLine — каталог товарів</title>
+  <meta name="description" content="Каталог товарів TacticLine з OLX: аксесуари, кріплення, спорядження та корисні дрібниці. Замовлення через Telegram або OLX." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Головна навігація">
+      <a class="brand" href="#top" aria-label="На головну">
+        <span class="brand-mark">TL</span>
+        <span>
+          <strong>TacticLine</strong>
+          <small>каталог товарів</small>
+        </span>
+      </a>
+      <div class="nav-actions">
+        <a class="ghost-link" href="https://www.olx.ua/uk/list/user/Q6uhw/" target="_blank" rel="noopener">OLX</a>
+        <a class="primary-link" href="https://t.me/NordicKostya" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </nav>
+
+    <section class="hero wrap" id="top">
+      <div class="hero-content">
+        <p class="eyebrow">OLX + Telegram каталог</p>
+        <h1>Товари в одному зручному магазині-каталозі</h1>
+        <p class="hero-text">Пошук, категорії, кошик-заявка і швидке замовлення через Telegram або перехід на OLX. Фото можна додати пізніше — сайт уже готовий працювати без них.</p>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#catalog">Дивитись товари</a>
+          <a class="button button-secondary" href="https://t.me/NordicKostya" target="_blank" rel="noopener">Написати продавцю</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Інформація про замовлення">
+        <span class="pill">Безкоштовний статичний сайт</span>
+        <h2>Як замовити?</h2>
+        <ol>
+          <li>Обери товари</li>
+          <li>Натисни “В кошик”</li>
+          <li>Відправ заявку в Telegram</li>
+        </ol>
+        <p>Оплата, доставка і наявність уточнюються напряму з продавцем.</p>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="notice wrap">
+      <strong>Важливо:</strong> каталог не продає зброю або боєприпаси. Перед замовленням покупець самостійно перевіряє законність використання товару у своїй країні/регіоні.
+    </section>
+
+    <section class="toolbar wrap" aria-label="Фільтри каталогу">
+      <label class="search-box">
+        <span>Пошук товару</span>
+        <input id="searchInput" type="search" placeholder="Наприклад: сошки, кріплення, брелок..." autocomplete="off" />
+      </label>
+      <label class="select-box">
+        <span>Категорія</span>
+        <select id="categorySelect">
+          <option value="all">Усі категорії</option>
+        </select>
+      </label>
+      <label class="select-box">
+        <span>Сортування</span>
+        <select id="sortSelect">
+          <option value="default">За замовчуванням</option>
+          <option value="price-asc">Спочатку дешевші</option>
+          <option value="price-desc">Спочатку дорожчі</option>
+          <option value="name-asc">За назвою</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="catalog-section wrap" id="catalog">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h2>Товари</h2>
+        </div>
+        <p id="resultCount" class="result-count"></p>
+      </div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <h3>Нічого не знайдено</h3>
+        <p>Спробуй змінити пошук або категорію.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Кошик">
+    <button class="cart-toggle" id="cartToggle" type="button" aria-expanded="false">
+      <span>Кошик</span>
+      <strong id="cartCount">0</strong>
+    </button>
+    <div class="cart-body" id="cartBody" hidden>
+      <div class="cart-header">
+        <h2>Заявка</h2>
+        <button class="icon-button" id="clearCart" type="button">Очистити</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-total">
+        <span>Разом:</span>
+        <strong id="cartTotal">0 грн</strong>
+      </div>
+      <a id="telegramOrder" class="button button-primary full" href="https://t.me/NordicKostya" target="_blank" rel="noopener">Відправити в Telegram</a>
+      <p class="cart-note">Після натискання відкриється Telegram із готовим текстом заявки.</p>
+    </div>
+  </aside>
+
+  <footer class="footer wrap">
+    <div>
+      <strong>TacticLine</strong>
+      <p>Для замовлення або деталей пишіть 👉 <a href="https://t.me/NordicKostya" target="_blank" rel="noopener">@NordicKostya</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.olx.ua/uk/list/user/Q6uhw/" target="_blank" rel="noopener">OLX продавця</a>
+      <a href="https://t.me/NordicKostya" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

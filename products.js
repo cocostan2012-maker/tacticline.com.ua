@@ -1,0 +1,197 @@
+// Товари для каталогу.
+// Щоб оновити сайт: змінюй цей список, зберігай файл і знову завантажуй сайт на хостинг.
+// Поле olxUrl можна замінити на пряме посилання конкретного оголошення OLX.
+window.PRODUCTS = [
+  {
+    id: "bipod-harris-6-9",
+    title: "Сошки Harris-style 6–9\"",
+    category: "Сошки",
+    price: 800,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["6–9\"", "метал", "для рейки/адаптера"],
+    description: "Компактні складні сошки для спорядження. Підійдуть для польових задач, тренувань і комплектації набору.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "▱"
+  },
+  {
+    id: "mbus-sights-set",
+    title: "Механічні прицільні MBUS type, комплект",
+    category: "Прицільні / кріплення",
+    price: 700,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["комплект", "передній+задній", "складні"],
+    description: "Набір складних механічних прицільних пристроїв типу MBUS. Уточнюйте сумісність перед замовленням.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "⌖"
+  },
+  {
+    id: "unity-fast-t1-t2",
+    title: "Високе кріплення Unity Fast type T1/T2",
+    category: "Прицільні / кріплення",
+    price: 530,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["T1/T2", "high mount", "алюміній"],
+    description: "Високе кріплення типу Unity Fast для сумісних коліматорів формату T1/T2. Перед покупкою перевірте посадкові розміри.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "▲"
+  },
+  {
+    id: "carry-handle-ati-style",
+    title: "Рукоятка переносу вогню ATI Style",
+    category: "Рукоятки",
+    price: null,
+    oldPrice: null,
+    stock: "ціну уточнюйте",
+    tags: ["рукоятка", "гвинт", "ключ"],
+    description: "Комплектація: рукоятка (1), гвинт (1), гайка (1), шестигранний ключ (1). Для сумісних рейок і платформ.",
+    olxUrl: "https://www.olx.ua/d/uk/obyavlenie/ruchka-perenosa-ognya-rukoyatka-perenosu-vognyu-rukvya-upor-dlya-oruzhiya-ati-style-na-oruzhie-dlya-zbro-ak-ar15-ar10-cz-bren-na-zbroyu-ID10ztzf.html",
+    icon: "▰"
+  },
+  {
+    id: "bore-snake-556",
+    title: "Bore Snake / шнур для чистки 5.56 / .223",
+    category: "Догляд",
+    price: 130,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["5.56", ".223", "чистка"],
+    description: "Компактний шнур для швидкого чищення. Зручно брати з собою в набір догляду.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "≈"
+  },
+  {
+    id: "bore-snake-762",
+    title: "Bore Snake / шнур для чистки 7.62",
+    category: "Догляд",
+    price: 130,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["7.62", "чистка", "компактний"],
+    description: "Шнур для догляду і швидкого очищення. Наявність калібрів уточнюйте перед замовленням.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "≈"
+  },
+  {
+    id: "bore-snake-9mm",
+    title: "Bore Snake / шнур для чистки 9 мм",
+    category: "Догляд",
+    price: 130,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["9 мм", "чистка", "EDC"],
+    description: "Легкий шнур для швидкого чищення. Підходить для компактного набору догляду.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "≈"
+  },
+  {
+    id: "ar-scraper-tool",
+    title: "Скребок для догляду AR-type",
+    category: "Догляд",
+    price: 210,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["інструмент", "чистка", "компактний"],
+    description: "Невеликий інструмент для догляду за сумісними вузлами. Зручний для сервісного набору.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "✦"
+  },
+  {
+    id: "rsa-qd-mount",
+    title: "Кріплення RSA QD type",
+    category: "Прицільні / кріплення",
+    price: 115,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["QD", "антабка", "кріплення"],
+    description: "Компактне кріплення типу RSA QD для ременя/антабки. Уточнюйте сумісність із вашою рейкою.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "◉"
+  },
+  {
+    id: "paracord-31m",
+    title: "Паракорд 4 мм, 31 м",
+    category: "EDC / спорядження",
+    price: 130,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["4 мм", "31 м", "мотузка"],
+    description: "Універсальний паракорд для побуту, туризму, спорядження та дрібного ремонту.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "〰"
+  },
+  {
+    id: "s-biner-plastic",
+    title: "Пластиковий S-biner карабін",
+    category: "EDC / спорядження",
+    price: 14,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["карабін", "пластик", "EDC"],
+    description: "Легкий карабін для ключів, дрібного спорядження, організації рюкзака або підсумка.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "S"
+  },
+  {
+    id: "daisy-x7-glasses",
+    title: "Захисні окуляри Daisy X7 type",
+    category: "Захист",
+    price: 225,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["окуляри", "захист", "комплект"],
+    description: "Тактичні/захисні окуляри типу Daisy X7 для тренувань, майстерні або активного відпочинку.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "◔"
+  },
+  {
+    id: "afg2-foregrip",
+    title: "Кутова рукоятка AFG2 type",
+    category: "Рукоятки",
+    price: null,
+    oldPrice: null,
+    stock: "ціну уточнюйте",
+    tags: ["AFG2", "чорний/койот", "рукоятка"],
+    description: "Кутова рукоятка типу AFG2. Доступні кольори та сумісність уточнюйте перед замовленням.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "⌁"
+  },
+  {
+    id: "rvg-foregrip",
+    title: "Вертикальна рукоятка RVG type",
+    category: "Рукоятки",
+    price: null,
+    oldPrice: null,
+    stock: "ціну уточнюйте",
+    tags: ["RVG", "чорний/койот", "рукоятка"],
+    description: "Вертикальна рукоятка типу RVG. Перед замовленням уточнюйте колір, наявність і тип кріплення.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "▮"
+  },
+  {
+    id: "pubg-metal-keychain",
+    title: "Металевий брелок PUBG",
+    category: "Брелоки / сувеніри",
+    price: 85,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["PUBG", "метал", "сувенір"],
+    description: "Сувенірний металевий брелок у стилі PUBG. Є різні варіанти — уточнюйте перед замовленням.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "★"
+  },
+  {
+    id: "ak-metal-keychain",
+    title: "Металевий брелок AK type",
+    category: "Брелоки / сувеніри",
+    price: 55,
+    oldPrice: null,
+    stock: "наявність уточнюйте",
+    tags: ["метал", "брелок", "сувенір"],
+    description: "Компактний металевий брелок-сувенір. Підійде як дрібний подарунок або аксесуар для ключів.",
+    olxUrl: "https://www.olx.ua/uk/list/user/Q6uhw/",
+    icon: "◆"
+  }
+];
